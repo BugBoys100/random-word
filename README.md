@@ -5,7 +5,7 @@ Random Word est un simple programme python qui donne un mot aléatoire et qui l'
 
 Pour pouvoir utiliser Random Word, il vous faut : 
 
-- <a href='https://www.python.org/downloads/' target='_blank'>Python 3.1</a> ou supérieur
+- [Python 3.1](https://www.python.org/downloads/) ou supérieur
 - Modules [Pystyle](https://pypi.org/project/pystyle/), [lxml](https://pypi.org/project/lxml/) et [Requests](https://pypi.org/project/requests/)
 
 ## Installation
