@@ -13,49 +13,50 @@ nom_webhook = 'LE NOM QUE TU VEUX DU WEBHOOK'
 avatar_webhook = 'AVATAR QUE TU VEUX DU WEBHOOK'
 
 text = r'''
-            _____                 _                                         _     
-            |  __ \               | |                                       | |    
-            | |__) |__ _ _ __   __| | ___  _ __ ___   __      _____  _ __ __| |___ 
-            |  _  // _` | '_ \ / _` |/ _ \| '_ ` _ \  \ \ /\ / / _ \| '__/ _` / __|
-            | | \ \ (_| | | | | (_| | (_) | | | | | |  \ V  V / (_) | | | (_| \__ \
-            |_|  \_\__,_|_| |_|\__,_|\___/|_| |_| |_|   \_/\_/ \___/|_|  \__,_|___/
+_____                 _                                         _     
+|  __ \               | |                                       | |    
+| |__) |__ _ _ __   __| | ___  _ __ ___   __      _____  _ __ __| |___ 
+|  _  // _` | '_ \ / _` |/ _ \| '_ ` _ \  \ \ /\ / / _ \| '__/ _` / __|
+| | \ \ (_| | | | | (_| | (_) | | | | | |  \ V  V / (_) | | | (_| \__ \
+|_|  \_\__,_|_| |_|\__,_|\___/|_| |_| |_|   \_/\_/ \___/|_|  \__,_|___/
                                                                                     
                                                                         
 '''[1:]
 
 
 banner = r"""
-                                    `OooOOo.                     o                
-                                    o     `o                   O                 
-                                    O      O                   o                 
-                                    o     .O                   o                 
-                                    OOooOO'  .oOoO' 'OoOo. .oOoO  .oOo. `oOOoOO. 
-                                    o    o   O   o   o   O o   O  O   o  O  o  o 
-                                    O     O  o   O   O   o O   o  o   O  o  O  O 
-                                    O      o `OoO'o  o   O `OoO'o `OoO'  O  o  o 
-                                                                                
-                                                                                
-                                        o          `O                   o       
-                                        O           o                  O        
-                                        o           O                  o        
-                                        O           O                  o        
-                                        o     o     o .oOo. `OoOo. .oOoO        
-                                        O     O     O O   o  o     o   O        
-                                        `o   O o   O' o   O  O     O   o        
-                                        `OoO' `OoO'  `OoO'  o     `OoO'o       
-                                              
+`OooOOo.                     o                
+o     `o                   O                 
+O      O                   o                 
+o     .O                   o                 
+OOooOO'  .oOoO' 'OoOo. .oOoO  .oOo. `oOOoOO. 
+o    o   O   o   o   O o   O  O   o  O  o  o 
+O     O  o   O   O   o O   o  o   O  o  O  O 
+O      o `OoO'o  o   O `OoO'o `OoO'  O  o  o 
+                                            
+                                            
+    o          `O                   o       
+    O           o                  O        
+    o           O                  o        
+    O           O                  o        
+    o     o     o .oOo. `OoOo. .oOoO        
+    O     O     O O   o  o     o   O        
+    `o   O o   O' o   O  O     O   o        
+    `OoO' `OoO'  `OoO'  o     `OoO'o       
+            
 """[1:]
 
 system('color a')
 print("\n"*5)
 
 
-print(banner)
+Anime.Fade(Center.Center(banner), Colors.red_to_yellow, Colorate.Vertical, enter=True)
 
 
 # Test si webhook déjà rentré
 if lien == 'TON URL WEBHOOK':
-    lien = str(input('URL du webhook : '))
+    print(Colorate.Diagonal(Colors.red_to_yellow, Center.XCenter(text)))
+    lien = Write.Input("URL du webhook -> ", Colors.red_to_yellow, interval=0.005)
 
 if not lien.startswith('https://discord.com/api/webhooks'):
     print('URL du webhook invalide')
@@ -63,12 +64,8 @@ if not lien.startswith('https://discord.com/api/webhooks'):
     exit()
 
 else:
-    system('cls')
-    print(text)
 
-
-
-    nombre = int(input('Nombre de mots : '))
+    nombre = int(Write.Input("Nombre de mots -> ", Colors.red_to_yellow, interval=0.005))
 
     mots_a_trouver = []
     mots_larousse = []
