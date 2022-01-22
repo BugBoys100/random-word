@@ -19,9 +19,9 @@ Pour lancer le programme, éxecutez `run.bat`
 ## Fabriqué avec
 
 * [Pystyle](https://github.com/billythegoat356/pystyle) - Style Visuel
-* [Liste mots français txt](https://www.freelang.com/dictionnaire/dic-francais.php)
+* [Liste mots](https://www.freelang.com/dictionnaire/dic-francais.php) - Peut marcher avec n'importe quel fichier txt contenant une liste de mots ou de caractères.
 
-## Auteurs
+## Auteur
 * **Bug Boys** _alias_ [@BugBoys100](https://github.com/BugBoys100)
 
 ## License
