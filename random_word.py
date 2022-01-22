@@ -1,10 +1,11 @@
 # by BugBoys100
 
 
-from os import system
-from requests import post
-from json import dumps
+from os import name, system
+from requests import post, get
+from json import dumps, loads
 import random
+from larousse_api import larousse
 from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
 
 
@@ -73,7 +74,6 @@ else:
 
 
     for _ in range(nombre):
-        # mot_a_trouver = 'sachez'
         mot_a_trouver = random.choice(open('liste_francais.txt').readlines())
         mot_a_trouver = mot_a_trouver[:len(mot_a_trouver)-1]
         mots_a_trouver.append(mot_a_trouver)
@@ -86,10 +86,17 @@ else:
                     ' ')] + '%20' + mot_larousse[mot_larousse.index(' ')+1:]
 
         mots_larousse.append(mot_larousse)
-        
-
-
+    
+    
     resultat = ''
+    # Infos sur le webhook
+    
+    resp = get(lien)
+    if resp.status_code in [200, 204]:
+        webhook = loads(resp.text)['name']
+        infos = f'\nRéussi ! les mots ont étés envoyés à {webhook} sont :\n'
+
+
 
     for i in range(nombre):
         resultat = resultat + \
@@ -130,10 +137,12 @@ else:
 
     post(lien, data=dumps(embed).encode("utf-8"), headers=headers)
 
-
-    print(f'Réussi ! les mots qui ont étés envoyés sont :\n')
+    if infos:
+        print(infos)
+    else:
+        print(f'\nRéussi ! les mots qui ont étés envoyés sont :\n')
     for i in range(len(mots_a_trouver)):
-        print('  - ',mots_a_trouver[i].capitalize())
+        print('  - ', mots_a_trouver[i].capitalize(), ' '*(20-len(mots_a_trouver[i])), f'https://www.larousse.fr/dictionnaires/francais/{mots_larousse[i]}')
     print('\n')
     system('pause')
     exit()
