@@ -4,13 +4,13 @@ Random Word est un simple programme python qui donne un mot aléatoire et qui l'
 ## Pré-requis
 
 Pour pouvoir utiliser Random Word, il vous faut : 
-- Python 3.1 ou supérieur
-- modules Pystyle, lxml et Requests
+- [Python 3.1](https://www.python.org/downloads/) ou supérieur
+- modules [Pystyle](https://pypi.org/project/pystyle/), [lxml](https://pypi.org/project/lxml/) et [Requests](https://pypi.org/project/requests/)
 
 ## Installation
 
 Pour installer Random World, éxecutez `install.bat`
-<br>Ou installez les modules uns-à-uns via la commande `py -m pip install [nom du module]
+<br>Ou installez les modules uns-à-uns via la commande `py -m pip install [nom du module]`
 
 ## Démarrage
 
