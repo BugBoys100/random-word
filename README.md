@@ -18,7 +18,8 @@ Pour lancer le programme, éxecutez `run.bat`
 <br>Ou lancez le fichier `random_word.py`
 ## Fabriqué avec
 
-* [Pystyle](https://github.com/billythegoat356/pystyle) - Framework CSS (front-end)
+* [Pystyle](https://github.com/billythegoat356/pystyle) - Style Visuel
+* [Liste mots français txt](https://www.freelang.com/dictionnaire/dic-francais.php)
 
 ## Auteurs
 * **Bug Boys** _alias_ [@BugBoys100](https://github.com/BugBoys100)
