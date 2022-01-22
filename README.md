@@ -1,5 +1,4 @@
-# Titre du projet
-
+# Random Word
 Random Word est un simple programme python qui donne un mot aléatoire et qui l'envoie avec son lien LaRousse sur un Webhook Discord.
 
 ### Pré-requis
