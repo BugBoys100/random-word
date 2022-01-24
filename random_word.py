@@ -75,37 +75,36 @@ else:
 
     mots_a_trouver = []
     mots_larousse = []
+    mots_defs = dict()
     # choix du mot
 
 
-    for _ in range(nombre):
+    for i in range(nombre):
         mot_a_trouver = random.choice(open('liste_francais.txt').readlines())
         mot_a_trouver = mot_a_trouver[:len(mot_a_trouver)-1]
         mots_a_trouver.append(mot_a_trouver)
 
-        mot_larousse = mot_a_trouver
-        for i in range(mot_larousse.count(' ')):
-            # web search
-            if mot_larousse.index(' '):
-                mot_larousse = mot_larousse[:mot_larousse.index(
-                    ' ')] + '%20' + mot_larousse[mot_larousse.index(' ')+1:]
 
-        mots_larousse.append(mot_larousse)
+        mot_larousse = mot_a_trouver
     
-    
+        larousse_def = larousse.get_definitions(mot_a_trouver)[0][3:]
+        if not larousse_def:
+            larousse_def = 'aucune définition'
+        # if larousse_def.find('\n') > 1:
+        #         larousse_def = larousse_def[:larousse_def.index('\n')] + '  \n  ' + larousse_def[larousse_def.index('\n')+1:]
+        mots_larousse.append(larousse_def)
+
     resultat = ''
     # Infos sur le webhook
     
     resp = get(lien)
     if resp.status_code in [200, 204]:
         webhook = loads(resp.text)['name']
-        infos = f'\nRéussi ! les mots ont étés envoyés à {webhook} sont :\n'
-
-
+        infos = f'\nRéussi ! les mots qui ont étés envoyés à {webhook} sont :\n'
 
     for i in range(nombre):
         resultat = resultat + \
-            f'- [{mots_a_trouver[i].capitalize()}](https://www.larousse.fr/dictionnaires/francais/{mots_larousse[i]})\n'
+            f' \n- **__{mots_a_trouver[i].capitalize()}__** : \n```{mots_larousse[i]}```\n'
 
 
     headers = {
@@ -115,7 +114,7 @@ else:
 
     # Tests des entrées Avatar / Pseudo
     if nom_webhook == 'LE NOM QUE TU VEUX DU WEBHOOK':
-        nom_webhook = 'Choix des mots Bug Boys heheh'
+        nom_webhook = 'Choix des mots by Bug Boys heheh'
     if avatar_webhook == 'AVATAR QUE TU VEUX DU WEBHOOK':
         avatar_webhook = 'https://i.imgur.com/wxf30FQ.jpg'
 
@@ -141,13 +140,13 @@ else:
             }]}
 
     post(lien, data=dumps(embed).encode("utf-8"), headers=headers)
-
+    
     if infos:
         print(infos)
     else:
         print(f'\nRéussi ! les mots qui ont étés envoyés sont :\n')
     for i in range(len(mots_a_trouver)):
-        print('  - ', mots_a_trouver[i].capitalize(), ' '*(20-len(mots_a_trouver[i])), f'https://www.larousse.fr/dictionnaires/francais/{mots_larousse[i]}')
+        print('  - ', mots_a_trouver[i].capitalize())
     print('\n')
     system('pause')
     exit()
