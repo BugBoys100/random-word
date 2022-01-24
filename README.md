@@ -15,7 +15,9 @@ Pour installer Random World, éxecutez `install.bat`
 
 ## Démarrage
 
-Pour lancer le programme, éxecutez `run.bat`
+Pour lancer le programme :
+- Ajoutez vos paramètres dans `settings.json` *(facultatif)*
+- Executez `run.bat`
 <br>Ou lancez le fichier `random_word.py`
 ## Fabriqué avec
 
