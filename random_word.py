@@ -8,10 +8,15 @@ import random
 from larousse_api import larousse
 from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
 
+import json
 
-lien = 'TON URL WEBHOOK'
-nom_webhook = 'LE NOM QUE TU VEUX DU WEBHOOK'
-avatar_webhook = 'AVATAR QUE TU VEUX DU WEBHOOK'
+with open('settings.json') as json_data:
+    data_dict = json.load(json_data)
+
+lien = data_dict['lien_webhook']
+nom_webhook = data_dict['nom_webhook']
+avatar_webhook = data_dict['avatar_webhook']
+
 
 text = r'''
 _____                 _                                         _     
