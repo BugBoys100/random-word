@@ -136,8 +136,8 @@ else:
                         "text": "by Bug Boys#9702"
                     },
                 'thumbnail': {
-                        'url': 'https://i.imgur.com/wxf30FQ.jpg',
-                    }
+                        'url': avatar_webhook,
+                }
             }]}
 
     post(lien, data=dumps(embed).encode("utf-8"), headers=headers)
