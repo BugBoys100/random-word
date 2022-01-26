@@ -29,8 +29,8 @@ Pour lancer le programme :
 ## Prochainement ... 🤔
 
 Les modifications à venir :
-- Ajout d'un package PiPy pour tirer un mot aléatoire 
-- Ajout d'un package PiPy pour envoyer un message dans un Webhook Discord
+- Ajout d'un package PyPi pour tirer un mot aléatoire 
+- Ajout d'un package PyPi pour envoyer un message dans un Webhook Discord
 
 ## Auteur ✏️
 * **Bug Boys** _alias_ [@BugBoys100](https://github.com/BugBoys100)
