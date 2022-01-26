@@ -87,7 +87,8 @@ else:
 
         mot_larousse = mot_a_trouver
     
-        larousse_def = larousse.get_definitions(mot_a_trouver)[0][3:]
+        larousse_def = larousse.get_definitions(mot_a_trouver)[0]
+        if larousse_def.startswith('1. '): larousse_def = larousse_def[3:]
         if not larousse_def:
             larousse_def = 'aucune définition'
         # if larousse_def.find('\n') > 1:
