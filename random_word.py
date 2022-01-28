@@ -56,7 +56,7 @@ system('color a')
 print("\n"*5)
 
 
-Anime.Fade(Center.Center(banner), Colors.red_to_yellow, Colorate.Vertical, enter=True)
+# Anime.Fade(Center.Center(banner), Colors.red_to_yellow, Colorate.Vertical, enter=True)
 
 
 # Test si webhook déjà rentré
